@@ -221,7 +221,7 @@ PartitionLayout::createPartitions( Device* dev,
 
     // Let's check if we have enough space for each partitions, using the size
     // propery or the min-size property if unit is in percentage.
-    for ( const auto& entry : qAsConst( m_partLayout ) )
+    for ( const auto& entry : std::as_const( m_partLayout ) )
     {
         if ( !entry.partSize.isValid() )
         {
